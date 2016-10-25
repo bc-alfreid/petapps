@@ -22,7 +22,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @pet.photo %>
+  <%= image_tag(@pet.picture_url(:thumbnail), :width=>50, :height=>50) %>
 </p>
 
 <p>
