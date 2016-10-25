@@ -1,0 +1,37 @@
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+
+
+h1 {
+  font-family: 'Trirong', 'Helvetica', sans-serif;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.devise {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  margin: auto;
+  overflow: auto;
+}
+
+
+.panel {
+  margin-top: 10px;
+  background: rgba(0,0,0,0.25);
+  color: white;
+}
+
+.help-block {
+  color: #fff;
+}
