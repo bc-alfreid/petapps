@@ -19,7 +19,9 @@ gem 'country_select'
 gem 'rolify'
 gem 'cancancan'
 
-
+# for uploading files and photos
+gem 'cloudinary'
+gem 'carrierwave'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
