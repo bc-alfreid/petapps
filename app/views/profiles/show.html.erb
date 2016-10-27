@@ -4,6 +4,8 @@
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
+
+
         <p>
           <strong>First name:</strong>
           <%= @profile.first_name %>
@@ -46,7 +48,7 @@
 
         <p>
           <strong>Photo:</strong>
-          <%= @profile.photo %>
+          <%= image_tag(@profile.picture_url(:thumbnail), :width=>50, :height=>50) %>
         </p>
 
         <p>
@@ -57,6 +59,21 @@
         <% if current_user.profile == @profile %>
           <%= link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-warning' %>
         <% end %>
+
+
+        <p>
+          <strong>Lat:</strong>
+          <%= @profile.latitude %>
+        </p>
+
+        <p>
+          <strong>Long:</strong>
+          <%= @profile.longitude %>
+        </p>
+
+
+
+
 
       </div>
     </div>
@@ -71,7 +88,8 @@
         <div class="panel-body">
           <%= pet.name %>
 
-          <%= link_to 'Click to View', pet_path(pet.id)  %>
+          <%= image_tag(pet.picture_url(:thumbnail), :width=>50, :height=>50) %>
+          <%= link_to 'Click to View', pet_path(pet.slug)  %>
 
         </div>
       </div>

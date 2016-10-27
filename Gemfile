@@ -19,6 +19,17 @@ gem 'country_select'
 gem 'rolify'
 gem 'cancancan'
 
+# for uploading files and photos
+gem 'cloudinary'
+gem 'carrierwave'
+
+# converting url id into friendly url
+gem 'friendly_id', '~> 5.1.0'
+
+
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 
 # Use mysql as the database for Active Record
