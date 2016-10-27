@@ -3,4 +3,6 @@ class Pet < ActiveRecord::Base
 
   mount_uploader :picture, ProfilePictureUploader
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

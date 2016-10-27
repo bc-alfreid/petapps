@@ -23,6 +23,15 @@ gem 'cancancan'
 gem 'cloudinary'
 gem 'carrierwave'
 
+# converting url id into friendly url
+gem 'friendly_id', '~> 5.1.0'
+
+
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
