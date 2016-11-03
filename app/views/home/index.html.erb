@@ -1,5 +1,52 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<!-- jumbotron http://getbootstrap.com/components/#jumbotron -->
+<div class="jumbotron">
+  <h1>Welcome to Pets Playmates</h1>
+  <p>Get cuddles from your dogs in your area</p>
+
+  <!-- http://getbootstrap.com/css/#forms-inline  -->
+
+  <!-- will call non restful route search_pets POST   /pets/search(.:format)         pets#search -->
+  <form class="form-inline" action="/pets/search" method="post">
+
+    <!-- adds hiden tag to add authenticity  -->
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputAmount">Search</label>
+      <div class="input-group">
+
+        <!-- the name="area" is passed as params in the /pets/search controller  -->
+        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Find dogs in your area" autofocus name="area">
+        <div class="input-group-addon"> <i class="fa fa-search"></i>      </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+</div>
+
+
+<div class="row">
+  <% @pets.each do |pet| %>
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= pet.name %>
+
+          <%= image_tag(pet.picture_url, class: 'img-responsive') %>
+
+          <%if can? :manage, pet %>
+              <%= link_to 'Click to View', pet_path(pet.id)  %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 
 
 <% if user_signed_in? %>

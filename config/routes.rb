@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pets
+  resources :pets do
+    collection do            # put single route under pets with search action
+      post :search
+    end
+  end
   resources :profiles
   devise_for :users, controllers: { registrations: "registrations" }
   root 'home#index'

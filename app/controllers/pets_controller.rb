@@ -3,6 +3,13 @@ class PetsController < ApplicationController
   load_and_authorize_resource         # otherwise do authorize! :edit, @profile on each controller actions
 
 
+  def search
+    # checks database and search for profiles near the area in search criteria
+    @nearby_profiles = Profile.includes(user: :pets).near(params['area'] + 'Australia', 5, units: :km)
+
+  end
+
+
   # GET /pets
   # GET /pets.json
   def index
